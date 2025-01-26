@@ -1,6 +1,7 @@
 import { Component, inject } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+
 import { AuthService } from "../../services";
 import Swal from "sweetalert2";
 
@@ -20,7 +21,7 @@ export class LoginPageComponent {
   login() {
     const { email, password } = this.myForm.value;
 
-    this.authService.login(email, password).subscribe({
+    this.authService.login({ email, password }).subscribe({
       next: () => this.router.navigateByUrl("/dashboard"),
       error: (errorMessage) => {
         void Swal.fire("Error", errorMessage, "error");
