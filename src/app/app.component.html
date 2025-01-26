@@ -1,3 +1,9 @@
-<h1 *ngIf="!finishedAuthCheck()">Loading...</h1>
+<div
+  *ngIf="!finishedAuthCheck()"
+  class="container-login100"
+  style="background-image: url(&quot;../../../../assets/images/bg-01.jpg&quot;)"
+>
+  <span class="loader"></span>
+</div>
 
 <router-outlet *ngIf="finishedAuthCheck()" />
