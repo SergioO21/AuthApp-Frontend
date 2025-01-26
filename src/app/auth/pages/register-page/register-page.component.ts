@@ -25,10 +25,8 @@ export class RegisterPageComponent {
     this.authService.register({ name, email, password }).subscribe({
       next: () => this.router.navigateByUrl("/dashboard"),
       error: (errorMessage) => {
-        void Swal.fire("Error", errorMessage, "error");
+        void Swal.fire("Error", String(errorMessage), "error");
       },
     });
-
-    this.myForm.reset();
   }
 }
