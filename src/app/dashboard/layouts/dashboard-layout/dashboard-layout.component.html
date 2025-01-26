@@ -1,10 +1,39 @@
-<h1>Dashboard</h1>
-<hr />
+<div class="limiter">
+  <div
+    class="container-login100"
+    style="
+      background-image: url(&quot;../../../../assets/images/bg-01.jpg&quot;);
+    "
+  >
+    <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+      <div>
+        <span class="login100-form-title"> User </span>
 
-<h3>User</h3>
-<pre>{{ user() | json }}</pre>
+        <div class="user-cards-container">
+          <div class="user-card">
+            <h3 class="card-title">ID</h3>
+            <p class="card-content">{{ user()?._id }}</p>
+          </div>
 
-<router-outlet />
+          <div class="user-card">
+            <h3 class="card-title">Name</h3>
+            <p class="card-content">{{ user()?.name }}</p>
+          </div>
 
-<br />
-<button (click)="onLogout()">Logout</button>
+          <div class="user-card">
+            <h3 class="card-title">Email</h3>
+            <p class="card-content">{{ user()?.email }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="container-login100-form-btn">
+        <div class="wrap-login100-form-btn">
+          <div class="login100-form-bgbtn"></div>
+          <button class="login100-form-btn" type="submit" (click)="onLogout()">
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

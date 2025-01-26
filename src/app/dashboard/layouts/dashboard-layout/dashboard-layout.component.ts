@@ -4,6 +4,7 @@ import { AuthService } from "../../../auth/services";
 
 @Component({
   templateUrl: "./dashboard-layout.component.html",
+  styleUrls: ["./dashboard-layout.component.scss"],
 })
 export class DashboardLayoutComponent {
   private authService = inject(AuthService);
